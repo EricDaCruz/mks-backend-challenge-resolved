@@ -5,3 +5,14 @@ services:
       - 3000:3000
     volumes:
       - .:/home/node/app
+  
+  db:
+    image: postgres
+    ports:
+      - 5432:5432
+    volumes:
+      - ~/apps/postgres:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=12346
+      - POSTGRES_USER=root
+      - POSTGRES_DB=movie_catalog
