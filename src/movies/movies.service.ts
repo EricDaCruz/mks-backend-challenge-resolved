@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@nestjs/common';
+import { BadRequestException, Inject, Injectable } from '@nestjs/common';
 import { CreateMovieDto } from './dto/create-movie.dto';
 import { UpdateMovieDto } from './dto/update-movie.dto';
 import { Movie } from './entities/movie.entity';
@@ -19,8 +19,14 @@ export class MoviesService {
     return await this.movieRepository.find();
   }
 
-  async findOne(id: string): Promise<Movie> {
-    return await this.movieRepository.findOneBy({ id: id });
+  async findOneByTitle(title: string): Promise<Movie> {
+    const movie = await this.movieRepository.findOneBy({ title });
+
+    if (!movie) {
+      throw new BadRequestException('Movie not found');
+    }
+
+    return movie;
   }
 
   async update(id: string, updateMovieDto: UpdateMovieDto) {
