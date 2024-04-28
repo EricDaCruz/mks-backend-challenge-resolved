@@ -20,8 +20,8 @@ export class Movie {
   @Column()
   director: string;
 
-  @Column()
-  rating_imdb: string;
+  @Column('decimal')
+  rating_imdb: number;
 
   @Column()
   image_url: string;
