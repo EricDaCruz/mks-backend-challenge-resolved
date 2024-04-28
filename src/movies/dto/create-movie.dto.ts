@@ -1,8 +1,14 @@
-export class CreateMovieDto {
-  title: string;
-  genre: string;
-  director: string;
-  rating_imdb: string;
-  image_url: string;
-  release_date: Date;
-}
+import { z } from 'zod';
+
+export const createMovieSchema = z
+  .object({
+    title: z.string(),
+    genre: z.string(),
+    director: z.string(),
+    rating_imdb: z.number(),
+    image_url: z.string(),
+    release_date: z.coerce.date(),
+  })
+  .required();
+
+export type CreateMovieDto = z.infer<typeof createMovieSchema>;

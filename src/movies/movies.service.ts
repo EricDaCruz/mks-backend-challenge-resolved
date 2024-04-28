@@ -1,6 +1,6 @@
 import { BadRequestException, Inject, Injectable } from '@nestjs/common';
 import { CreateMovieDto } from './dto/create-movie.dto';
-import { UpdateMovieDto } from './dto/update-movie.dto';
+// import { UpdateMovieDto } from './dto/update-movie.dto';
 import { Movie } from './entities/movie.entity';
 import { Repository } from 'typeorm';
 
@@ -29,9 +29,9 @@ export class MoviesService {
     return movie;
   }
 
-  async update(id: string, updateMovieDto: UpdateMovieDto) {
-    return this.movieRepository.update(id, updateMovieDto);
-  }
+  // async update(id: string, updateMovieDto: UpdateMovieDto) {
+  //   return this.movieRepository.update(id, updateMovieDto);
+  // }
 
   async remove(id: string) {
     return this.movieRepository.delete(id);

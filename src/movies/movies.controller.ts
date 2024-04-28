@@ -5,18 +5,21 @@ import {
   Body,
   Param,
   Delete,
-  Put,
+  // Put,
   ParseUUIDPipe,
+  UsePipes,
 } from '@nestjs/common';
 import { MoviesService } from './movies.service';
-import { CreateMovieDto } from './dto/create-movie.dto';
-import { UpdateMovieDto } from './dto/update-movie.dto';
+import { CreateMovieDto, createMovieSchema } from './dto/create-movie.dto';
+// import { UpdateMovieDto } from './dto/update-movie.dto';
+import { ZodValidationPipe } from './helpers/validation/ZodValidationPipe';
 
 @Controller('movies')
 export class MoviesController {
   constructor(private readonly moviesService: MoviesService) {}
 
   @Post()
+  @UsePipes(new ZodValidationPipe(createMovieSchema))
   create(@Body() createMovieDto: CreateMovieDto) {
     return this.moviesService.create(createMovieDto);
   }
@@ -31,13 +34,13 @@ export class MoviesController {
     return await this.moviesService.findOneByID(id);
   }
 
-  @Put(':id')
-  update(
-    @Param('id', new ParseUUIDPipe()) id: string,
-    @Body() updateMovieDto: UpdateMovieDto,
-  ) {
-    this.moviesService.update(id, updateMovieDto);
-  }
+  // @Put(':id')
+  // update(
+  //   @Param('id', new ParseUUIDPipe()) id: string,
+  //   @Body() updateMovieDto: UpdateMovieDto,
+  // ) {
+  //   this.moviesService.update(id, updateMovieDto);
+  // }
 
   @Delete(':id')
   remove(@Param('id', new ParseUUIDPipe()) id: string) {
