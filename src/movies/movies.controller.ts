@@ -8,12 +8,15 @@ import {
   Put,
   ParseUUIDPipe,
   UsePipes,
+  UseGuards,
 } from '@nestjs/common';
 import { MoviesService } from './movies.service';
 import { CreateMovieDto, createMovieSchema } from './dto/create-movie.dto';
 import { UpdateMovieDto, updateMovieSchema } from './dto/update-movie.dto';
 import { ZodValidationPipe } from './helpers/validation/ZodValidationPipe';
+import { AuthGuard } from 'src/auth/auth.guard';
 
+@UseGuards(AuthGuard)
 @Controller('movies')
 export class MoviesController {
   constructor(private readonly moviesService: MoviesService) {}
