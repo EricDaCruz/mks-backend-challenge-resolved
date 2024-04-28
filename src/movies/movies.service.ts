@@ -19,8 +19,8 @@ export class MoviesService {
     return await this.movieRepository.find();
   }
 
-  async findOneByTitle(title: string): Promise<Movie> {
-    const movie = await this.movieRepository.findOneBy({ title });
+  async findOneByID(id: string): Promise<Movie> {
+    const movie = await this.movieRepository.findOneBy({ id });
 
     if (!movie) {
       throw new BadRequestException('Movie not found');

@@ -25,9 +25,9 @@ export class MoviesController {
     return this.moviesService.findAll();
   }
 
-  @Get(':title')
-  async findMovieByTitle(@Param('title') title: string) {
-    return await this.moviesService.findOneByTitle(title);
+  @Get(':id')
+  async findMovieByID(@Param('id') id: string) {
+    return await this.moviesService.findOneByID(id);
   }
 
   @Put(':id')
