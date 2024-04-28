@@ -71,3 +71,22 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 ## License
 
 Nest is [MIT licensed](LICENSE).
+
+## Solutions to validate the body update request
+
+No NestJS, quando você usa o decorador @UsePipes() em um método de manipulador de rota, o pipe é aplicado a cada parâmetro do manipulador que é decorado com um decorador de parâmetro (@Body(), @Param(), etc.).
+
+No seu caso, parece que o ZodValidationPipe está sendo aplicado tanto ao parâmetro id (que é uma string) quanto ao updateMovieDto (que é um objeto). Isso explicaria o erro "Expected object, received string".
+
+Uma solução possível seria aplicar o ZodValidationPipe apenas ao parâmetro updateMovieDto. Você pode fazer isso usando o decorador @Body() assim:
+
+```typescript
+@Put(':id')
+update(
+@Param('id', new ParseUUIDPipe()) id: string,
+@Body(new ZodValidationPipe(updateMovieSchema)) updateMovieDto: UpdateMovieDto,
+) {
+this.moviesService.update(id, updateMovieDto);
+}
+
+```
