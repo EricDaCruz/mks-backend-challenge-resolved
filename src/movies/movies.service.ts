@@ -16,7 +16,9 @@ export class MoviesService {
   }
 
   async findAll(): Promise<Movie[]> {
-    return await this.movieRepository.find();
+    const movies = await this.movieRepository.find();
+
+    return movies;
   }
 
   async findOneByID(id: string): Promise<Movie> {

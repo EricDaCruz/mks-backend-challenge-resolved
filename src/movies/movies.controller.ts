@@ -31,6 +31,7 @@ import {
   ApiTags,
 } from '@nestjs/swagger';
 import { MovieResponse, MovieSwagger } from './dto/swagger-docs';
+import { CacheTTL } from '@nestjs/cache-manager';
 
 @ApiTags('Movies')
 @UseGuards(AuthGuard)
@@ -59,12 +60,13 @@ export class MoviesController {
   }
 
   @Get()
+  @CacheTTL(30)
   @ApiResponse({
     status: 200,
     description: 'Get All Movies.',
     type: MovieResponse,
   })
-  findAll() {
+  async findAll() {
     return this.moviesService.findAll();
   }
 
