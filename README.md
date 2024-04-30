@@ -1,35 +1,39 @@
-<p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
-</p>
+# Catálogo de Filmes
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
+Este projeto é uma aplicação de catálogo de filmes construída com NestJS, Docker, TypeORM, TypeScript, Swagger, Zod e PostgreSQL.
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+## Tecnologias Utilizadas
 
-## Description
+- **NestJS**: Um framework para construir aplicações de servidor eficientes, confiáveis e escaláveis em Node.js.
+- **Docker**: Uma plataforma aberta para desenvolver, enviar e executar aplicações.
+- **TypeORM**: Um ORM que pode ser executado em plataformas NodeJS e pode ser usado com TypeScript e JavaScript.
+- **TypeScript**: Um superconjunto de JavaScript que adiciona tipagem estática e recursos orientados a objetos.
+- **Swagger**: Uma estrutura de software para projetar, construir, documentar e usar serviços da Web RESTful.
+- **Zod**: Uma biblioteca de validação de dados de baixo nível para TypeScript.
+- **PostgreSQL**: Um poderoso sistema de banco de dados relacional de código aberto.
+- **Postman**: Uma plataforma popular para testar APIs.
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## Como Executar o Projeto
 
-## Installation
+1. **Clone o repositório**
 
 ```bash
+git clone https://github.com/EricDaCruz/mks-backend-challenge-resolved.git
+
+```
+
+2. **Installation**
+
+```bash
+$ cd mks-backend-challenge-resolved
+
 $ npm install
+```
+
+## Running Docker
+
+```bash
+$ docker compose up
 ```
 
 ## Running the app
@@ -43,36 +47,48 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
+
+
 ```
 
-## Test
+Agora, a aplicação deve estar rodando em `http://localhost:3000`.
 
-```bash
-# unit tests
-$ npm run test
+## Documentação da API
 
-# e2e tests
-$ npm run test:e2e
+A documentação da API está disponível em `http://localhost:3000/api`.
 
-# test coverage
-$ npm run test:cov
-```
+## Referências
 
-## Support
+Esta seção é dedicada às referências que foram utilizadas para desenvolver esta aplicação. Aqui estão alguns vídeos e documentações que foram úteis:
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+### Vídeos
 
-## Stay in touch
+- [Desenvolvimento de APIs com Nest.js: Do zero aos testes automatizados](https://www.youtube.com/watch?v=yggaGQnsnxo&t=3568s)
+- [NestJS - Documentação automática com Swagger](https://www.youtube.com/watch?v=fshX_252HbU)
+- [Criando um Projeto do Zero com Nest, TypeORM e Postgres](https://www.youtube.com/watch?v=JlTdfXlIuEc)
 
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+### Documentações
 
-## License
+- [NestJS Documentation](https://docs.nestjs.com/)
+- [Docker Documentation](https://docs.docker.com/)
+- [TypeORM Documentation](https://typeorm.io/)
+- [Zod Documentation](https://zod.dev/)
 
-Nest is [MIT licensed](LICENSE).
 
-## Solutions to validate the body update request
+## Overview
+
+Desenvolver este projeto de catálogo de filmes foi uma jornada de aprendizado incrivelmente enriquecedora para mim. Embora eu já tivesse conhecimento acadêmico sobre Docker, Zod, TypeORM e Swagger, nunca havia trabalhado com NestJS antes. Portanto, este projeto representou um desafio interessante e uma oportunidade de expandir meus horizontes.
+
+A maior parte do meu tempo foi gasta lendo e compreendendo a documentação do NestJS. Foi um processo meticuloso, mas necessário, para desenvolver a aplicação. A cada passo, eu me encontrava descobrindo novos aspectos e recursos do NestJS que eu não conhecia antes.
+
+Este projeto me permitiu aplicar e expandir meus conhecimentos existentes, ao mesmo tempo em que me apresentou a novos conceitos e ferramentas. Foi uma experiência de aprendizado muito interessante e estou ansioso para aplicar o que aprendi em futuros projetos.
+
+Em resumo, este projeto foi um desafio gratificante que me permitiu crescer como desenvolvedor e expandir meu conjunto de habilidades.
+
+
+## Problemas 
+
+### Solutions to validate the body update request
 
 No NestJS, quando você usa o decorador @UsePipes() em um método de manipulador de rota, o pipe é aplicado a cada parâmetro do manipulador que é decorado com um decorador de parâmetro (@Body(), @Param(), etc.).
 
@@ -83,10 +99,10 @@ Uma solução possível seria aplicar o ZodValidationPipe apenas ao parâmetro u
 ```typescript
 @Put(':id')
 update(
-@Param('id', new ParseUUIDPipe()) id: string,
-@Body(new ZodValidationPipe(updateMovieSchema)) updateMovieDto: UpdateMovieDto,
+  @Param('id', new ParseUUIDPipe()) id: string,
+  @Body(new ZodValidationPipe(updateMovieSchema)) updateMovieDto: UpdateMovieDto,
 ) {
-this.moviesService.update(id, updateMovieDto);
+  this.moviesService.update(id, updateMovieDto);
 }
 
 ```
