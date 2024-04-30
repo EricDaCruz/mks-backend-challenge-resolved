@@ -6,4 +6,6 @@ WORKDIR /home/node/app
 
 USER node
 
-CMD ["npm install", "npm run start:prod"]
+RUN npm install
+
+CMD ["npm", "run", "start:prod"]
