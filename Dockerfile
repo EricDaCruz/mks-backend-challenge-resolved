@@ -6,4 +6,4 @@ WORKDIR /home/node/app
 
 USER node
 
-CMD [".docker/start.sh"]
+CMD ["npm install", "npm run start:prod"]
