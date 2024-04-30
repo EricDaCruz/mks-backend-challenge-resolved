@@ -92,9 +92,9 @@ Em resumo, este projeto foi um desafio gratificante que me permitiu crescer como
 
 No NestJS, quando você usa o decorador @UsePipes() em um método de manipulador de rota, o pipe é aplicado a cada parâmetro do manipulador que é decorado com um decorador de parâmetro (@Body(), @Param(), etc.).
 
-No seu caso, parece que o ZodValidationPipe está sendo aplicado tanto ao parâmetro id (que é uma string) quanto ao updateMovieDto (que é um objeto). Isso explicaria o erro "Expected object, received string".
+No meu caso o ZodValidationPipe está sendo aplicado tanto ao parâmetro id (que é uma string) quanto ao updateMovieDto (que é um objeto). Isso explica o erro "Expected object, received string".
 
-Uma solução possível seria aplicar o ZodValidationPipe apenas ao parâmetro updateMovieDto. Você pode fazer isso usando o decorador @Body() assim:
+Uma solução que encontrei foi  aplicar o ZodValidationPipe apenas ao parâmetro updateMovieDto. Podemos fazer isso usando o decorador @Body() assim:
 
 ```typescript
 @Put(':id')
